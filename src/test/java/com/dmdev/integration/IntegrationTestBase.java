@@ -31,7 +31,7 @@ public abstract class IntegrationTestBase {
     }
 
     @BeforeEach
-    void cleanData() throws SQLException {
+    protected void cleanData() throws SQLException {
         try (var connection = ConnectionManager.get();
              var statement = connection.createStatement()) {
             statement.execute(CLEAN_SQL);
